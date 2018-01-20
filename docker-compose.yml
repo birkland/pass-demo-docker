@@ -2,6 +2,15 @@ version: '2'
 
 services:
 
+  haproxy:
+    image: pass/haproxy:1.8.3
+    build: haproxy/1.8.3
+    env_file: .env
+    container_name: haproxy
+    ports:
+       - 443:443
+
+
   fcrepo:
     build:
       context: ./fcrepo/4.7.4-demo
