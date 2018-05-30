@@ -21,8 +21,8 @@ FCREPO_MODESHAPE_CONFIGURATION=classpath:/pass-repository.json \
 FCREPO_JMS_CONFIGURATION=classpath:/spring/jms.xml \
 FCREPO_LOGBACK_LOCATION=webapps/fcrepo/WEB-INF/classes/logback.xml \
 FCREPO_PROPERTIES_MANAGEMENT=relaxed \
+FCREPO_LOGBACK_FILE=-Dlogback.configurationFile=lib/pass-logback.xml \
 SLF4J_VERSION=1.7.25 \
-DEBUG_PORT=5006 \
 DEBUG_ARG="-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=5006" \
 COMPACTION_URI=https://oa-pass.github.io/pass-data-model/src/main/resources/context-2.2.jsonld \
 COMPACTION_PRELOAD_URI_PASS_STATIC_2_0=https://oa-pass.github.io/pass-data-model/src/main/resources/context-2.0.jsonld \
@@ -36,7 +36,6 @@ JSONLD_CONTEXT_PERSIST=true \
 JSONLD_CONTEXT_MINIMAL=true \
 AUTHZ_USE_SHIB_HEADERS=true
 
-EXPOSE ${DEBUG_PORT}
 EXPOSE ${FCREPO_PORT}
 
 VOLUME /data

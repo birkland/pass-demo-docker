@@ -33,6 +33,7 @@ OPTS="${OPTS}                                                                \
       -Dfcrepo.log=${FCREPO_LOG_LEVEL}                                       \
       -Dfcrepo.log.auth=${FCREPO_AUTH_LOG_LEVEL}                             \
       -Dfcrepo.log.jms=${FCREPO_LOG_JMS}                                     \
+      -Dlogback.configurationFile=${FCREPO_LOGBACK_FILE}                     \
       -Dfcrepo.jms.baseUrl=${_JMS_BASEURL}                                   \
       -Dfcrepo.spring.jms.configuration=${FCREPO_JMS_CONFIGURATION}          \
       -Dfcrepo.modeshape.configuration=${FCREPO_MODESHAPE_CONFIGURATION}     \
@@ -77,4 +78,4 @@ then
   OPTS="${OPTS} `echo ${DEBUG_ARG} | envsubst`"
 fi
 
-CATALINA_OPTS="${OPTS}" ${CMD}
+CATALINA_OPTS="${OPTS} ${FCREPO_EXTRA_OPTS}" ${CMD}
