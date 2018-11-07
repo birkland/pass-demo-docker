@@ -201,7 +201,9 @@ services:
       - dspace:pass.local
 # To override configuration, create a file named './repositories.json', edit to suit, and uncomment below
 #    volumes:
-#      - ./repositories.json:/repositories.json
+#      - ./packagers.properties:/packagers.properties
+    links:
+      - dspace:pass.local
 
   authz:
     build: ./authz
